@@ -1,6 +1,7 @@
 import json
 import requests
 import csv
+
 def getBlockchainHeight():
     url = 'https://blockchain.info/latestblock'
     response = requests.get(url)
@@ -20,20 +21,22 @@ f_ = open('./csv/hash_bits.csv','r')
 csv_ = csv.reader(f_)
 row_count = sum(1 for row in csv_)
 f_.close()
+
 f = csv.writer(open('./csv/hash_bits.csv', 'a'))
+
 if row_count == 0 :
     print("EMPTY CSV")
     f.writerow(['height','hash','bits'])
 else :
     print("LAST BLOCK HEIGHT STORED = %d" % (int(row_count)-2))
-if row_count < 0:
-    row_count = 0
+
+if row_count <= 0:
+    row_count = 1
+
 max_height = int(getBlockchainHeight())
+
 for i in range(int(row_count)-1,max_height):
     h,b = getHash(i)
     print("#"+str(i)+"\t\t"+str(h)+"\t"+str(b))
     f.writerow([i,h,b])
-#max_height = getBlockchainHeight()
-#print("## MAX HEIGHT IS %d" % max_height)
-#for i in range(0, max_height):
-#    print(getHash(i))
+
