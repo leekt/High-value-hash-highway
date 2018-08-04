@@ -18,5 +18,5 @@ python3 src/visualize.py
 ```
 
 **Reference**
-[high value hash highway](https://bitcointalk.org/index.php?topic=98986.0)
+- [high value hash highway](https://bitcointalk.org/index.php?topic=98986.0)
 
