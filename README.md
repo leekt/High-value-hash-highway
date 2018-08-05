@@ -1,12 +1,15 @@
 # high value hash highway visualization
 
-**run before crawling**
+**virtualenv (OPTIONAL)**
 ```
 virtualenv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-
+**create empty csv**
+```
+touch csv/hash_bits.csv
+```
 **crawl data**
 ```
 python3 src/bitcoinhash.py

@@ -1,7 +1,7 @@
 import numpy as np
 from bitarray import bitarray
 from binascii import hexlify
-import pylab
+from matplotlib import pylab
 import csv
 import math
 
