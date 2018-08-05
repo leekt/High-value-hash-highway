@@ -40,7 +40,7 @@ def scan():
         value = hash_value(bytearray.fromhex(row[1]))
         result.append((height, work, value))
     
-    return np.array(result,dtype='f8')[::-1]
+    return np.array(result,dtype='f8')
 
 dv = scan()
 print(dv)
