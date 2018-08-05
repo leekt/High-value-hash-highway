@@ -12,7 +12,7 @@ def hash_value(h):
             value = value + 8
             continue
         else:
-            value = value + int(math.log(h[i]))
+            value = value + 8 - np.log2(h[i])
             return value
     return value
 def hash_value2(h):
