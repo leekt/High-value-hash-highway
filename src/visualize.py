@@ -15,16 +15,6 @@ def hash_value(h):
             value = value + 8 - np.log2(h[i])
             return value
     return value
-def hash_value2(h):
-    if h==0: return 256
-    if h > (1<<256)-1: return 0
-    c = 0
-
-    while not (h & (1<<255)):
-        h <<= 1
-        c += 1
-
-    return c
 
 def nbits_to_target(bits):
     coeff = bits & 0x00ffffff
@@ -37,7 +27,6 @@ def target_to_work(target):
     return (2**256) / float(target)
 
 def scan():
-    # data = np.genfromtxt('./csv/hash_bits.csv', dtype=(int,object,int), delimiter=',', names=True)[::-1]
     f = open('./csv/hash_bits.csv','r')
     f_csv = csv.reader(f)
 
@@ -49,8 +38,8 @@ def scan():
         height = row[0]
         work = target_to_work(nbits_to_target(int(row[2])))
         value = hash_value(bytearray.fromhex(row[1]))
-        # print("WORK: "+str(work) + "\tVALUE : "+str(value))
         result.append((height, work, value))
+    
     return np.array(result,dtype='f8')[::-1]
 
 dv = scan()
