@@ -12,7 +12,7 @@ def hash_value(h):
             value = value + 8
             continue
         else:
-            value = value + 8 - np.log2(h[i])
+            value = value + 8 - int(np.log2(h[i]))
             return value
     return value
 
@@ -67,9 +67,9 @@ pylab.legend(loc=4)
 pylab.figure(3)
 pylab.clf()
 pylab.scatter(dv[:,0], dv[:,2]-np.log2(dv[:,1]), s=0.1, label='Hash Values (bits)')
-pylab.title('Hash Value vs Work')
+pylab.title('Hash Value - Difficulty')
 pylab.ylabel('Hash Value (zero bits) (log2(hash))')
-pylab.xlabel('Cumulative Work (est. hashes computed)')
+pylab.xlabel('Time (blocks)')
 pylab.legend(loc=4)
 
 pylab.show()
