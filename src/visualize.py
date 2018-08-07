@@ -6,15 +6,17 @@ import csv
 import math
 
 def hash_value(h):
-    value = 0
-    for i in range(0,32):
-        if h[i] == 0:
-            value = value + 8
-            continue
-        else:
-            value = value + 8 - int(np.log2(h[i]))
-            return value
-    return value
+    return 256 - np.log2(float(h))
+    
+#    value = 0
+#    for i in range(0,32):
+#        if h[i] == 0:
+#            value = value + 8
+#            continue
+#        else:
+#            value = value + 8 - np.log2(h[i::])
+#            return value
+#    return value
 
 def nbits_to_target(bits):
     coeff = bits & 0x00ffffff
@@ -37,7 +39,7 @@ def scan():
     for row in data:
         height = row[0]
         work = target_to_work(nbits_to_target(int(row[2])))
-        value = hash_value(bytearray.fromhex(row[1]))
+        value = hash_value(int(hexlify(bytes.fromhex(row[1])),16))
         result.append((height, work, value))
     
     return np.array(result,dtype='f8')
