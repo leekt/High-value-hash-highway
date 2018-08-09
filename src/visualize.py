@@ -7,16 +7,6 @@ import math
 
 def hash_value(h):
     return 256 - np.log2(float(h))
-    
-#    value = 0
-#    for i in range(0,32):
-#        if h[i] == 0:
-#            value = value + 8
-#            continue
-#        else:
-#            value = value + 8 - np.log2(h[i::])
-#            return value
-#    return value
 
 def nbits_to_target(bits):
     coeff = bits & 0x00ffffff
