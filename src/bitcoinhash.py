@@ -43,7 +43,7 @@ for i in range(int(row_count)-1,max_height):
         h,b = getHash(i)
         print("#"+str(i)+"\t\t"+str(h)+"\t"+str(b))
         f.writerow([i,h,b])
-    except ValueError as error:
+    except Exception as error:
         print('Caught this error: ' + repr(error))
         i = i-1
 
