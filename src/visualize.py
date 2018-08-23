@@ -67,7 +67,7 @@ pylab.legend(loc=4)
 
 pylab.figure(4)
 pylab.clf()
-pylab.hist(floor_diff,color="green",alpha=0.8, histtype='bar', ec='black', bins=range(0,int(floor_diff.max())))
+pylab.hist(floor_diff,color="green",alpha=0.8, histtype='bar', ec='black', bins=range(0,int(floor_diff.max())+1))
 pylab.title('Hash Value - Difficulty Histogram')
 pylab.yscale('log',basey=2)
 pylab.xlabel('Hash Value - Difficulty')
