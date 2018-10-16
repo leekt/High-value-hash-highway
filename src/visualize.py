@@ -1,10 +1,12 @@
 import numpy as np
 from bitarray import bitarray
 from binascii import hexlify
-from matplotlib import pylab
+import matplotlib
+#matplotlib.use('tkAGG')
+matplotlib.use('GTK3Cairo')
+import matplotlib.pylab as pylab
 import csv
 import math
-
 def hash_value(h):
     return 256 - np.log2(float(h))
 
