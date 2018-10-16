@@ -6,6 +6,9 @@ virtualenv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+```
+sudo apt-get install python-tk
+```
 **create empty csv**
 ```
 touch csv/hash_bits.csv
