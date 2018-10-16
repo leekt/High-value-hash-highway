@@ -7,7 +7,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 ```
-sudo apt-get install python-tk
+sudo apt-get install python3-tk
 ```
 **create empty csv**
 ```
