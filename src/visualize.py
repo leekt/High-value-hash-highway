@@ -2,8 +2,8 @@ import numpy as np
 from bitarray import bitarray
 from binascii import hexlify
 import matplotlib
-#matplotlib.use('tkAGG')
-matplotlib.use('GTK3Cairo')
+matplotlib.use('tkAGG')
+#matplotlib.use('GTK3Cairo')
 import matplotlib.pylab as pylab
 import csv
 import math
